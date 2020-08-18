@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="IRCTC- Indian Railway Catering and Tourism Corporation"
+    />
+    <meta name="robots" content="index,follow" />
+    <title>IRCTC</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pattaya&family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section id="contacts">
+      <div class="form">
+        <header class="form-head">
+          <h2>Contact Us</h2>
+          <form>
+            <div class="name">
+              <label for="name">Name:</label>
+              <input id="name" type="text" name="name" required />
+            </div>
+            <div class="email">
+              <label for="email">E-mail:</label>
+              <input id="email" type="email" name="email" required />
+            </div>
+            <button onclick="getLocation()">
+              Check Location
+            </button>
+
+            <textarea
+              name="location"
+              id="demo"
+              cols="30"
+              rows="4"
+              value="Location"
+            ></textarea>
+          </form>
+        </header>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-sec">
+        <h5>IRCTC &copy;</h5>
+        <ul>
+          <li>
+            <a href="#" title="instagram-link"
+              ><img src="/icons/instagram.svg" alt="instagram-social-media"
+            /></a>
+          </li>
+          <li>
+            <a href="#" title="twitter-link"
+              ><img src="/icons/twitter.svg" alt="twitter-social-media"
+            /></a>
+          </li>
+          <li>
+            <a href="#" title="youtube-link"
+              ><img src="/icons/youtube.svg" alt="youtube-social-media"
+            /></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <script>
+      var x = document.getElementById("demo");
+
+      function getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+          x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+      }
+
+      function showPosition(position) {
+        x.innerHTML =
+          "Latitude: " +
+          position.coords.latitude +
+          "<br> Longitude: " +
+          position.coords.longitude;
+      }
+    </script>
+  </body>
+</html>
